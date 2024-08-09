@@ -4,8 +4,10 @@ Dans le dossier src :
 
 compiler -> `javac ./nonogram/*.java`
 
-executer -> `java nonogram.Controleur ./nonogram/images/<nomDeLaSauvegarde>.data`
+executer -> `java nonogram.Controleur ./nonogram/images/<nomDeLaSauvegarde>.data*`
 
 mode de compilation temporaire (compile.list à venir)
 
 Amusez-vous bien !!!
+
+* : des exemples de sauvegardes sont présentes dans le dossier `/images`
