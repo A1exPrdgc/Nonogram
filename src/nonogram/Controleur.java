@@ -13,6 +13,7 @@ public class Controleur
 
 	public Controleur(String file)
 	{
+		this.couleur = true;
 		this.metier = new Metier(file);
 		this.ihm = new FrameNonogram(this);
 	}
