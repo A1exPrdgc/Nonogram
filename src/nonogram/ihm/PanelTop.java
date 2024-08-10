@@ -25,8 +25,8 @@ public class PanelTop extends JPanel
 
 			for (int j=0; j < this.ctrl.getMaxSize(this.ctrl.getTabLig()) - 2; j++)
 			{
-				JLabel temp = new JLabel();
-				temp.setPreferredSize(new Dimension(80, temp.getPreferredSize().height));
+				JLabel temp = new JLabel(" ");
+				temp.setFont(new Font("", Font.BOLD, 30));
 				this.add(temp);
 			}
 
@@ -34,12 +34,12 @@ public class PanelTop extends JPanel
 			{
 				if (this.tabCol[j][i] != 0)
 				{
-					this.tabLabel[j][i] = new JLabel(this.tabCol[j][i] + "");
+					this.tabLabel[j][i] = new JLabel(this.tabCol[j][i] + "", JLabel.RIGHT);
 					this.tabLabel[j][i].setFont(new Font("", Font.BOLD, 30));
 				}
 				else
 				{
-					this.tabLabel[j][i] = new JLabel();
+					this.tabLabel[j][i] = new JLabel(" ", JLabel.RIGHT);
 				}
 				this.add(this.tabLabel[j][i]);
 			}

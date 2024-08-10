@@ -12,6 +12,7 @@ public class FrameNonogram extends JFrame
 	private PanelTop panelTop;
 	private PanelGrille panelGrille;
 	private PanelBas panelBas;
+
 	private Graphics2D g2;
 	public FrameNonogram(Controleur ctrl)
 	{
@@ -24,7 +25,7 @@ public class FrameNonogram extends JFrame
 		this.panelLeft = new PanelNumbersLeft(this.ctrl);
 		this.panelBas = new PanelBas(this.ctrl);
 
-		this.setSize(this.ctrl.getTaille() * 100 / 2 + 5, (int)(this.panelTop.getH() * this.panelTop.getMax() + this.ctrl.getTaille() * (this.panelLeft.getH() + 9 / (this.ctrl.getTaille() / 5)) + this.panelBas.getPreferredSize().height));
+		this.setSize(this.ctrl.getTaille() * (this.panelTop.getW() + 20) + this.panelLeft.getMax() * this.panelLeft.getW(), (int)(this.panelTop.getH() * this.panelTop.getMax() + this.ctrl.getTaille() * (this.panelLeft.getH() + 9 / (this.ctrl.getTaille() / 5)) + this.panelBas.getPreferredSize().height));
 
 		this.add(this.panelBas, BorderLayout.SOUTH);
 		this.add(panelTop, BorderLayout.NORTH);
