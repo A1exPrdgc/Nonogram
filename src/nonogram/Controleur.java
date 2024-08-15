@@ -6,13 +6,19 @@ import nonogram.metier.Metier;
 public class Controleur
 {
 
+	private static final int VIE = 3;
+
 	private Metier metier;
 	private FrameNonogram ihm;
+
+	private int vie;
 
 	private boolean couleur;
 
 	public Controleur(String file)
 	{
+		this.vie = VIE;
+
 		this.couleur = true;
 		this.metier = new Metier(file);
 		this.ihm = new FrameNonogram(this);
@@ -55,5 +61,11 @@ public class Controleur
 	public void croix2Coul(boolean val){this.couleur = val;}
 
 	public boolean getCouleur(){return this.couleur;}
+
+	public void moins1Vie(){this.vie -= 1;}
+
+	public void majPanelVie(){this.ihm.majPanelVie();}
+
+	public int getVie(){return this.vie;}
 
 }

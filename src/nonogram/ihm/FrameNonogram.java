@@ -43,4 +43,6 @@ public class FrameNonogram extends JFrame
 	{
 		this.dispose();
 	}
+
+	public void majPanelVie() {this.panelBas.majNbVie();}
 }

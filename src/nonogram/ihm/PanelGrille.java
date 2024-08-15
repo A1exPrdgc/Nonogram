@@ -94,6 +94,8 @@ public class PanelGrille extends JPanel
 			this.x = e.getX();
 			this.y = e.getY();
 
+			boolean GorB;
+
 			if (this.x > 8)
 			{
 				this.indiceCol = (this.x - 8) / (int)(largeurTop * 2);
@@ -102,18 +104,30 @@ public class PanelGrille extends JPanel
 
 			if(PanelGrille.this.ctrl.getCouleur())
 			{
-				PanelGrille.this.ctrl.check(indiceLig, indiceCol);
+				GorB = PanelGrille.this.ctrl.check(indiceLig, indiceCol);
 			}
 			else
 			{
-				PanelGrille.this.ctrl.coche(indiceLig, indiceCol);
+				GorB = PanelGrille.this.ctrl.coche(indiceLig, indiceCol);
+			}
+
+			if (!GorB)
+			{
+				PanelGrille.this.ctrl.moins1Vie();
+				PanelGrille.this.ctrl.majPanelVie();
 			}
 
 			PanelGrille.this.majDessin();
 
+			if(PanelGrille.this.ctrl.getVie() == 0)
+			{
+				PanelGrille.this.ctrl.fermer();
+				JOptionPane.showMessageDialog(null, "Vous avez perdu");
+				System.exit(0);
+			}
+
 			if(PanelGrille.this.ctrl.testWin())
 			{
-				System.out.println("vous avez gagné");
 				PanelGrille.this.ctrl.fermer();
 				JOptionPane.showMessageDialog(null, "Vous avez gagné");
 				System.exit(0);
