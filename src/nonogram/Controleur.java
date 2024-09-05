@@ -3,6 +3,8 @@ package nonogram;
 import nonogram.ihm.FrameNonogram;
 import nonogram.metier.Metier;
 
+import javax.swing.*;
+
 public class Controleur
 {
 
@@ -51,7 +53,14 @@ public class Controleur
 
 	public static void main(String[] args)
 	{
-		new Controleur(args[0]);
+		if (args.length != 0)
+		{
+			new Controleur(args[0]);
+		}
+		else
+		{
+			JOptionPane.showMessageDialog(null, "Erreur : Veuillez charger une sauvegarde", "Erreur", JOptionPane.ERROR_MESSAGE);
+		}
 	}
 
 	public boolean testWin(){return this.metier.testWin();}
