@@ -341,8 +341,4 @@ public class Metier
 	public char[][] getGrille(){
 		return grille;
 	}
-
-	public static void main(String[] args){
-		new Metier(args[0]);
-	}
 }
