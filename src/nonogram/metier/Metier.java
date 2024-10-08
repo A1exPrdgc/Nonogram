@@ -3,6 +3,8 @@ package nonogram.metier;
 import java.io.FileInputStream;
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 public class Metier
 {
 	private int[][] tab_col;
@@ -115,7 +117,20 @@ public class Metier
 				String line = sc.nextLine();
 				for (int col=0; col < line.length(); col++)
 				{
-					res[lig][col] = line.charAt(col);
+					if (col >= taille)
+					{
+						JOptionPane.showMessageDialog(null, "Erreur : Sauvegarde invalide (taille invalide)", "Erreur", JOptionPane.ERROR_MESSAGE);
+						System.exit(0);
+					}
+					if(line.charAt(col) == '0' || line.charAt(col) == '1')
+					{
+						res[lig][col] = line.charAt(col);
+					}
+					else
+					{
+						JOptionPane.showMessageDialog(null, "Erreur : Sauvegarde invalide (caractère invalide)", "Erreur", JOptionPane.ERROR_MESSAGE);
+						System.exit(0);
+					}
 				}
 				lig++;
 			}

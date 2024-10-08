@@ -42,7 +42,7 @@ public class PanelBas extends JPanel implements ItemListener
 		this.group.add(this.croix);
 		this.croix.addItemListener(this);
 
-		coeur = new JLabel(new ImageIcon("./nonogram/ressources/coeur.png"));
+		coeur = new JLabel(new ImageIcon("../src/nonogram/ressources/coeur.png"));
 		this.panelVie.add(coeur);
 
 		this.vie = new JLabel();

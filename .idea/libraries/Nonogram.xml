@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Nonogram">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/artifacts/Nonogram_jar/Nonogram.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
